@@ -1,7 +1,3 @@
--- Student Records Database Schema
--- Author: Sibonelo Lukhele
--- Date: 2026
-
 CREATE TABLE students (
     student_id SERIAL PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
@@ -26,5 +22,5 @@ CREATE TABLE enrollments (
     grade VARCHAR(2)
 );
 
--- Index for query optimization
+
 CREATE INDEX idx_student_last_name ON students(last_name);
