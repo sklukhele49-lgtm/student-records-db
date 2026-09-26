@@ -1,12 +1,7 @@
-
-
--- 1. Get all students
 SELECT * FROM students;
 
--- 2. Get all courses
 SELECT * FROM courses;
 
--- 3. Join students, enrollments, and courses
 SELECT
     s.first_name,
     s.last_name,
@@ -17,7 +12,6 @@ JOIN enrollments e ON s.student_id = e.student_id
 JOIN courses c ON e.course_id = c.course_id
 ORDER BY s.last_name;
 
--- 4. Count students per course
 SELECT
     c.course_name,
     COUNT(e.student_id) AS total_students
@@ -26,7 +20,6 @@ LEFT JOIN enrollments e ON c.course_id = e.course_id
 GROUP BY c.course_name
 ORDER BY total_students DESC;
 
--- 5. Find students with grade A
 SELECT
     s.first_name,
     s.last_name,
